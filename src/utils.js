@@ -1,6 +1,6 @@
 
 
-function moveUpOrDown(direction, index, array) {
+export function moveUpOrDown(direction, index, array) {
     let newArray = [...array];
     if(direction === 'UP' && index > 0){
         [newArray[index-1], newArray[index]] = [newArray[index], newArray[index-1]];
@@ -11,14 +11,14 @@ function moveUpOrDown(direction, index, array) {
     return newArray;
 }
 
-function removeItem(index, array) {
+export function removeItem(index, array) {
     let newArray = [...array];
 
     newArray.splice(index,1);
     return newArray;
 }
 
-function addAllPrices(array){
+export function addAllPrices(array){
     let tally = 0;
     for(let i=0; i<array.length; i++){
         if (typeof array[i].price === 'number' && ! isNaN(array[i].price)){
@@ -28,4 +28,4 @@ function addAllPrices(array){
     return tally;
 }
 
-module.exports = {moveUpOrDown, removeItem, addAllPrices};
+// module.exports = {moveUpOrDown, removeItem, addAllPrices};
