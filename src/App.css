@@ -3,6 +3,26 @@
 }
 
 
+.gotItemButton {
+  background-color: #6AB93F;
+}
+
+.notGotItemButton {
+  background-color: #E42638;
+}
+
+
 #shoppingListDisplay {
   list-style-type: none; /* no bullets */
+}
+
+
+/* Below not used - but useful to see and copy from */
+/* Maplestory colour range from colormind.com */
+.COLOUR_PALETTE {
+  background-color: #262930; /* general background */
+  background-color: #945537;
+  color: #E7DAB2; /* for text on above 2 backgrounds */
+  background-color: #E42638; /*red button */
+  background-color: #6AB93F; /* green button */
 }

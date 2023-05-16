@@ -26,7 +26,8 @@ function App() {
   // 2) update the totalSpend state based on new shoppingList
   useEffect(() => {
     // NOTE: The 'If' test below is needed - See README for "React StrictMode Issue"
-    // if(shoppingList.length > 0){ //NOTE - REMOVED BECUASE OF DELETING LAST ITEM ISSUE - CHECK LATER
+    // NOTE2 - Have commented-out below 'if' test and StrictMode in order to handle when shoppingList becomes zero length after a delete
+    // if(shoppingList.length > 0){ 
       localStorage.setItem('SHOPPING_LIST_1', JSON.stringify(shoppingList)); //(1)
       setTotalSpend(addAllPrices(shoppingList)); // (2)
     // }

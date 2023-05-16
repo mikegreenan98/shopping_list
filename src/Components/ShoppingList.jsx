@@ -6,17 +6,22 @@ const ShoppingList = ({shoppingList, setShoppingList}) => {
 
     const handleMove = (direction, ind)=>{
         setShoppingList(moveUpOrDown(direction, ind, shoppingList));
-    }
+    };
 
     const handleRemove = (ind)=>{
-        let temp = [...shoppingList];
-        console.log(temp);
         setShoppingList(removeItem(ind, shoppingList));
-        setShoppingList(removeItem(ind, temp));
-    }
+    };
 
 
-    const handleToggle = (ind)=>{}
+    const handleToggle = (ind)=>{
+        setShoppingList(shoppingList.map((listItem,index)=>{
+            if(index === ind){
+              return {"item": listItem.item, "price": listItem.price, "got": !listItem.got};
+            } else {
+              return {"item": listItem.item, "price": listItem.price, "got": listItem.got};
+            }
+          }));
+    };
 
 return(
     <ul id="shoppingListDisplay">
@@ -24,7 +29,9 @@ return(
         {shoppingList.map((listItem, index) => {
         return (
             <li className='shoppingListItem' key={index}>
-                <button className="ItemButton" onClick={()=>{handleToggle(index)}}>
+                <button 
+                    className={listItem.got ? 'gotItemButton': 'notGotItemButton'}
+                    onClick={()=>{handleToggle(index)}}>
                     {listItem.item} (£{listItem.price})
                 </button>
 

@@ -1,3 +1,34 @@
+# SHOPPING LIST
+
+## Instructions for Running, Testing and Building
+The default notes provided by create-react-app for running, tesing and building the app are still included at end of this file (see 'Getting Started with Create React App').
+
+
+## Build Status - Known bugs or Issues
+### React's StrictMode Issue wehn using local storage
+There is a React issue which is well documented on stack overflow and elsewhere:
+React's StrictMode causes a double render.This causes the local storage to be wiped out on first render. The code in app.js and index.js provide one well documented solution, with another well document solution also provided, but commented-out.
+The balance is between using strictMode's advantage in dev stage, vs avoiding double render in order to be able to delete last item in shoppingList.
+
+
+## Design - Choices and Rationale
+### Overall
+A diagram is provided in 'Design' directory.
+Given the advised timescales for this acticity I have decided to tackle stories 1,2,3,4,5,6,8 from the 'Recruitment Coding Challenge'.
+I 'spiked' story 7, but it appears the API is no longer working, and in any case getting exact price match with shopping list items would be complex.
+Story 10 is not possible in timescales because I have not used this technology as yet.
+Story 11 is also outside these timescales and would require a database solution rather than local storage, for security reasons.
+Story 9 may be possible if time permits.
+
+### Persistant Shopping List
+This requirement has been achived in this case using local storage, i.e, the local browser cache.
+For a shopping list this should be sufficient.
+Another solution would be to store data in a database (e.g. SQL or MongoDB), which could be stored at front-end, or at back-end via developing an HTPP server in node.js for example.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
