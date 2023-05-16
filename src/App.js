@@ -11,24 +11,25 @@ function App() {
   console.log(totalSpend);
   console.table(shoppingList);
 
-  //Retrieve shoppingList from local storage on the first/opening render
+  //(1) Retrieve shoppingList from local storage on the first/opening render
+  //(2) Also set totalSpend from storage to avoid need to wait for async set state
   useEffect(() => {
     const listInStorage = JSON.parse(localStorage.getItem('SHOPPING_LIST_1'));
     if (listInStorage) {
-      setShoppingList(listInStorage);
-      setTotalSpend(addAllPrices(listInStorage));
+      setShoppingList(listInStorage); // (1)
+      setTotalSpend(addAllPrices(listInStorage)); // (2)
     }
   }, []);
 
   // Every time shoppingList is changed:
-  // 1) save shoppgingList to local storage
+  // 1) save shoppingList to local storage
   // 2) update the totalSpend state based on new shoppingList
   useEffect(() => {
     // NOTE: The 'If' test below is needed - See README for "React StrictMode Issue"
-    if(shoppingList.length > 0){
+    // if(shoppingList.length > 0){ //NOTE - REMOVED BECUASE OF DELETING LAST ITEM ISSUE - CHECK LATER
       localStorage.setItem('SHOPPING_LIST_1', JSON.stringify(shoppingList)); //(1)
       setTotalSpend(addAllPrices(shoppingList)); // (2)
-    }
+    // }
 }, [shoppingList]);
 
 return (

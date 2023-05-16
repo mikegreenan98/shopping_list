@@ -19,6 +19,7 @@ function removeItem(index, array) {
 }
 
 function addAllPrices(array){
+    console.log(array);
     let tally = 0;
     for(let i=0; i<array.length; i++){
         tally += array[i].price;

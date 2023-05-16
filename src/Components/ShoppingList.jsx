@@ -1,5 +1,5 @@
 import {FaLongArrowAltUp, FaLongArrowAltDown} from 'react-icons/fa'
-import { moveUpOrDown } from '../utils'
+import { moveUpOrDown, removeItem } from '../utils'
 
 
 const ShoppingList = ({shoppingList, setShoppingList}) => {
@@ -8,7 +8,14 @@ const ShoppingList = ({shoppingList, setShoppingList}) => {
         setShoppingList(moveUpOrDown(direction, ind, shoppingList));
     }
 
-    const handleRemove = (ind)=>{}
+    const handleRemove = (ind)=>{
+        let temp = [...shoppingList];
+        console.log(temp);
+        setShoppingList(removeItem(ind, shoppingList));
+        setShoppingList(removeItem(ind, temp));
+    }
+
+
     const handleToggle = (ind)=>{}
 
 return(

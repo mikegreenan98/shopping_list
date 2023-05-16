@@ -10,6 +10,7 @@ const AddItem = ({shoppingList, setShoppingList}) => {
         event.preventDefault();
         if (newItem !== ""){
             setShoppingList([...shoppingList, {"item": newItem, "price": newItemPrice, "got": false}]);
+            // clear local state now that shoppingList has been updated
             setNewItem("");
             setNewItemPrice("");
         }
