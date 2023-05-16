@@ -28,10 +28,13 @@ return(
         <div id="shoppingListDisplay">
         <span id="listInstructions">click the items below whilst you shop:</span>
         <br></br>
+        <p></p>
         <span id="listInstructionsRed"><b>Red</b></span>
         <span id="listInstructions">=not yet in basket ; </span>
         <span id="listInstructionsGreen"><b>Green</b></span>
         <span id="listInstructions">= in basket</span>
+        <br></br>
+        <br></br>
         {shoppingList.map((listItem, index) => {
         return (
             <li className='shoppingListItem' key={index}>

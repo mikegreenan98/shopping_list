@@ -21,7 +21,9 @@ function removeItem(index, array) {
 function addAllPrices(array){
     let tally = 0;
     for(let i=0; i<array.length; i++){
-        tally += array[i].price;
+        if (typeof array[i].price === 'number' && ! isNaN(array[i].price)){
+            tally += array[i].price;
+        }
     }
     return tally;
 }
