@@ -13,10 +13,8 @@ function moveUpOrDown(direction, index, array) {
 
 function removeItem(index, array) {
     let newArray = [...array];
-    // console.log(newArray);
 
     newArray.splice(index,1);
-    // console.log(newArray);
     return newArray;
 }
 
