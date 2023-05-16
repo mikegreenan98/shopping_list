@@ -1,20 +1,133 @@
-.App {
-  text-align: center;
+.addItemForm {
+  width: 370px;
+  background-color: #E7DAB2;
+  color:#945537;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border: 0.2rem solid #945537;
+  /* justify-self: center; */
+
 }
 
 
+
+.App {
+  text-align: center;
+  background-color: #262930;
+  color: #E7DAB2;
+}
+
+/* === Buttons (below) === */
+button{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 8%;
+  background-color: #945537;
+  /* color: white; */
+  color: #E7DAB2;
+  font-size: 0.7rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.deleteButton {
+  grid-area: deleteButton;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+}
+
 .gotItemButton {
   background-color: #6AB93F;
+  grid-area: itemButton;
 }
 
 .notGotItemButton {
   background-color: #E42638;
+  grid-area: itemButton;
 }
 
+
+.upButton{
+  grid-area: upButton;
+  height: 30px;
+}
+
+.downButton{
+  grid-area: downButton;
+  height: 30px;
+}
+/* == Buttons (above) === */
+
+#listInstructions {
+  color: #E7DAB2;
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+  font-size: small;
+  margin-left: 0;
+  float:left;
+}
+
+#listInstructionsGreen {
+  color: #6AB93F;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: small;
+  margin-left: 0;
+  float:left;
+}
+#listInstructionsRed {
+  color: #E42638;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: small;
+  margin-left: 0;
+  float:left;
+}
+
+#shoppingList {
+  list-style-type: none; /* no bullets */
+  padding-left: 0;
+}
 
 #shoppingListDisplay {
-  list-style-type: none; /* no bullets */
+  width: 370px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.shoppingListItem {
+  width: 370px;
+  background-color: #E7DAB2;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.1rem;
+  margin-bottom: 0.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border: 0.2rem solid #945537;
+  justify-content: center;
+  font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: 15rem auto; /*1st column fixed to 15 ren */
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+  "itemButton upButton deleteButton"
+  "itemButton moveText deleteButton"
+  "itemButton downButton deleteButton";
+}
+
+.title {
+  color: #E7DAB2; /* for text on above */
+  font-size: x-large;
+}
+
+
 
 
 /* Below not used - but useful to see and copy from */

@@ -25,9 +25,27 @@ This requirement has been achived in this case using local storage, i.e, the loc
 For a shopping list this should be sufficient.
 Another solution would be to store data in a database (e.g. SQL or MongoDB), which could be stored at front-end, or at back-end via developing an HTPP server in node.js for example.
 
+## Tech Stack
+### Front-End
+React seemed an ideal choice. The 'Recruitment Coding Challenge' mentioned pages and page visits, therefore I went for React, rather than React-Native. Jest was used for testing.
 
+### Back-End
+In this case there was no back-end. The main reason to have a backend would be for the persistency of the shopping list. In this case, as explained above, this was achieved via local storage, which is probably sufficient for a short-term shopping list.
 
+### Testing
+Static Module tesing has been done in jest for the utils.js functions.
+The UI code was visually tested as it was being built via the 'npm start' command.
+Also using inspect mode, console.logs were applied and some limited use of 'toggle device' to see app on typical mobile phones etc.
 
+## Time Spent on Activity - and further things to be done in future
+### 6 Hours dev time
+This version has concluded after 6 hours dev time, with all stories explained above in Design Choices completed, and styling added.
+Ahead of the exercise, I did investigate ('spike') the use of local memory storage because I had not previously used it.
+I also drew the design before the start of the development phase.
+### Further changes
+With more time, the next steps would include:
+- add more restrictions/validation to the user input for new items.
+- ensure the app works effectively on different size screens.
 
 # Getting Started with Create React App
 

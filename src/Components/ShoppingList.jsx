@@ -24,8 +24,14 @@ const ShoppingList = ({shoppingList, setShoppingList}) => {
     };
 
 return(
-    <ul id="shoppingListDisplay">
-        <div>
+    <ul id="shoppingList">
+        <div id="shoppingListDisplay">
+        <span id="listInstructions">click the items below whilst you shop:</span>
+        <br></br>
+        <span id="listInstructionsRed"><b>Red</b></span>
+        <span id="listInstructions">=not yet in basket ; </span>
+        <span id="listInstructionsGreen"><b>Green</b></span>
+        <span id="listInstructions">= in basket</span>
         {shoppingList.map((listItem, index) => {
         return (
             <li className='shoppingListItem' key={index}>
