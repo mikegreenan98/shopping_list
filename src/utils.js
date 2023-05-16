@@ -11,7 +11,7 @@ function moveUpOrDown(direction, index, array) {
     return newArray;
 }
 
-function remove(index, array) {
+function removeItem(index, array) {
     let newArray = [...array];
     // console.log(newArray);
 
@@ -28,4 +28,4 @@ function addAllPrices(array){
     return tally;
 }
 
-module.exports = {moveUpOrDown, remove, addAllPrices};
+module.exports = {moveUpOrDown, removeItem, addAllPrices};
