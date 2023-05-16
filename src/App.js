@@ -3,27 +3,32 @@ import {useState, useEffect} from 'react';
 import Header from './Components/Header';
 import AddItem from './Components/AddItem';
 import ShoppingList from './Components/ShoppingList';
+const {addAllPrices} = require('./utils');
 
 function App() {
   const [shoppingList, setShoppingList] = useState([]);
   const [totalSpend, setTotalSpend] = useState(0);
+  console.log(totalSpend);
+  console.table(shoppingList);
 
   //Retrieve shoppingList from local storage on the first/opening render
   useEffect(() => {
-    const listInStorage = JSON.parse(localStorage.getItem('SHOPPING_LIST_LOCAL'));
+    const listInStorage = JSON.parse(localStorage.getItem('SHOPPING_LIST_1'));
     if (listInStorage) {
       setShoppingList(listInStorage);
-      // TBD ---- setTotalSpend(....TBD...));
+      setTotalSpend(addAllPrices(listInStorage));
     }
   }, []);
 
-  // Every time shoppingList is changed, save it to local storage
+  // Every time shoppingList is changed:
+  // 1) save shoppgingList to local storage
+  // 2) update the totalSpend state based on new shoppingList
   useEffect(() => {
-    // If test below is needed - See README for "React StrictMode Issue"
+    // NOTE: The 'If' test below is needed - See README for "React StrictMode Issue"
     if(shoppingList.length > 0){
-      localStorage.setItem('SHOPPING_LIST_LOCAL', JSON.stringify(shoppingList));
+      localStorage.setItem('SHOPPING_LIST_1', JSON.stringify(shoppingList)); //(1)
+      setTotalSpend(addAllPrices(shoppingList)); // (2)
     }
-    console.log(shoppingList);
 }, [shoppingList]);
 
 return (
@@ -32,8 +37,6 @@ return (
       <AddItem 
                 shoppingList={shoppingList}
                 setShoppingList={setShoppingList}
-                totalSpend={totalSpend}
-                setTotalSpend={setTotalSpend}
       />
       <ShoppingList
                 shoppingList={shoppingList}
