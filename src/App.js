@@ -8,8 +8,8 @@ const {addAllPrices} = require('./utils');
 function App() {
   const [shoppingList, setShoppingList] = useState([]);
   const [totalSpend, setTotalSpend] = useState(0);
-  console.log(totalSpend);
-  console.table(shoppingList);
+  // console.log(totalSpend);
+  // console.table(shoppingList);
 
   //(1) Retrieve shoppingList from local storage on the first/opening render
   //(2) Also set totalSpend from storage to avoid need to wait for async set state
