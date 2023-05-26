@@ -27,16 +27,12 @@ const AddItem = ({shoppingList, setShoppingList}) => {
 
   const handleChange = (e) => {
     e.preventDefault();
-    // const { value = "" } = e.target;
-    const { value} = e.target;
-    console.log(value);
+    const {value} = e.target;
     const parsedValue = value.replace(/[^.\d]/gi, "");
-    console.log(parsedValue);
+    // not sure why but needed this intermediate step to set the currency value correctly
     let parsedValueNum = +parsedValue;
     parsedValueNum = +parsedValueNum.toFixed(2);
-    console.log(parsedValueNum + typeof parsedValueNum);
     setNewItemPrice(parsedValueNum);
-    // setNewItemPrice(parsedValueNum.toFixed(2));
     setTemp(parsedValue);
   };
 
